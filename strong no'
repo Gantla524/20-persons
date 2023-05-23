@@ -1,0 +1,29 @@
+#include<stdio.h>
+int factorial(int num);
+int main()
+{
+int num,originalnum,remainder,sum=0;
+printf("Enter a number:");
+scanf("%d",&num);
+originalnum=num;
+while(num>0)
+{
+remainder=num % 10;
+sum+=factorial(remainder);
+num/=10;
+}
+if(sum==originalnum)
+{
+printf("%d is a strong number\n",originalnum);
+}
+return 0;
+}
+int factorial(int num)
+{
+int fact=1;
+for(int i=1;i<=num;i++)
+{
+fact*=i;
+}
+return fact;
+}
